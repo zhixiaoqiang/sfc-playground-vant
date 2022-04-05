@@ -5,6 +5,7 @@ import execa from 'execa'
 const commit = execa.sync('git', ['rev-parse', 'HEAD']).stdout.slice(0, 7)
 
 export default defineConfig({
+  base: './',
   plugins: [vue()],
   define: {
     __VUE_COMMIT__: JSON.stringify(commit),
