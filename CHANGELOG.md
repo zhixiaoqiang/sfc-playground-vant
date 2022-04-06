@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.2
+
+### Patch Changes
+
+- add release.yaml workflows
+
 ## 1.0.1
 
 ### Patch Changes

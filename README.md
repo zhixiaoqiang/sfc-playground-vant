@@ -49,8 +49,11 @@ pnpm dev
 3. Execute `pnpm changeset publish` to publish `npm library`. [can skip]
 4. Execute `git commit`, this command will trigger `lint-staged` and `commitzen`.
 5. Execute `git push` to trigger `Github Actions` or `vercel Deploy`
-<!-- 3. If you create a PR merge to main, `changeset/actions` will create a `Version Packages` PR. confirm merge `Version Packages` PR will trigger `changeset publish`, it's really publish. --
+<!-- 3. If you create a PR merge to main, `changeset/actions` will create a `Version Packages` PR. confirm merge `Version Packages` PR will trigger `changeset publish`, it's really publish. -->
 
+### CHANGELOG
+
+Please refer to [CHANGELOG](https://github.com/zhixiaoqiang/sfc-playground-vant/blob/main/CHANGELOG.md) for details.
 ## License
 
 MIT

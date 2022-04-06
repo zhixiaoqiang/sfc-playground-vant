@@ -1,6 +1,6 @@
 {
   "name": "@jzone/sfc-playground-vant",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Try Vant in the Playground. Currently only Vant 3+ is supported",
   "keywords": [
     "vant",
