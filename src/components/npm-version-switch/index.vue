@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-// @ts-ignore
+
 const {
   store,
   npm,
@@ -8,26 +8,26 @@ const {
   fetchVersions
 } = defineProps(['store', 'npm', 'currentCommit', 'fetchVersions'])
 
-let originCommit = currentCommit
+const originCommit = currentCommit
 const activeVersion = ref(originCommit ? `@${originCommit}` : '')
 const publishedVersions = ref<string[]>()
 const expanded = ref(false)
 
-async function toggle() {
+async function toggle () {
   expanded.value = !expanded.value
   if (!publishedVersions.value) {
     publishedVersions.value = await fetchVersions()
   }
 }
 
-async function setVersion(v: string) {
-  activeVersion.value = `loading...`
+async function setVersion (v: string) {
+  activeVersion.value = 'loading...'
   await store[`set${npm}Version`](v)
   activeVersion.value = `v${v}`
   expanded.value = false
 }
 
-function resetVersion() {
+function resetVersion () {
   store[`reset${npm}Version`]()
   activeVersion.value = `@${originCommit}`
   expanded.value = false
@@ -39,7 +39,7 @@ onMounted(async () => {
   })
   // if no currentCommit, set @latest version as activeVersion
   if (!currentCommit) {
-    activeVersion.value = `loading...`
+    activeVersion.value = 'loading...'
     publishedVersions.value = await fetchVersions()
     // find @latest version
     const latestReleaseVersion = publishedVersions.value?.find(v => !v.includes('-'))
@@ -49,13 +49,27 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="version" @click.stop>
-    <span class="active-version" @click="toggle">
+  <div
+    class="version"
+    @click.stop
+  >
+    <span
+      class="active-version"
+      @click="toggle"
+    >
       {{ npm }}: {{ activeVersion }}
     </span>
-    <ul class="versions" :class="{ expanded }">
-      <li v-if="!publishedVersions"><a>loading versions...</a></li>
-      <li v-for="version of publishedVersions">
+    <ul
+      class="versions"
+      :class="{ expanded }"
+    >
+      <li v-if="!publishedVersions">
+        <a>loading versions...</a>
+      </li>
+      <li
+        v-for="version of publishedVersions"
+        :key="version"
+      >
         <a @click="setVersion(version)">v{{ version }}</a>
       </li>
       <li>
@@ -65,8 +79,7 @@ onMounted(async () => {
         <a
           href="https://app.netlify.com/sites/vue-sfc-playground/deploys"
           target="_blank"
-          >Commits History</a
-        >
+        >Commits History</a>
       </li>
     </ul>
   </div>

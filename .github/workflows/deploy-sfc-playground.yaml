@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -39,5 +41,5 @@ jobs:
       #   env:
       #     SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
       #   with:
-      #     source-repo: git@github.com:varletjs/varlet.git
-      #     destination-repo: git@gitee.com:varlet/varlet-ui-playground.git
+      #     source-repo: git@github.com:zhixiaoqiang/sfc-playground-vant.git
+      #     destination-repo: git@gitee.com:zhixiaoqiang/sfc-playground-vant.git

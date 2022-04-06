@@ -30,7 +30,7 @@ then it'll be your repository totally.
 
 To build the playground, run the following command:
 
-```
+```bash
 pnpm build
 ```
 
@@ -38,11 +38,18 @@ pnpm build
 
 To develop the playground, run the following command:
 
-```
+```bash
 pnpm dev
 ```
 
-visit <http://localhost:3000>
+### Create Changelog
+
+1. Execute `pnpm changeset` to add a changeset.
+2. Execute `pnpm changeset version` to change `CHANGELOG.md`.
+3. Execute `pnpm changeset publish` to publish `npm library`. [can skip]
+4. Execute `git commit`, this command will trigger `lint-staged` and `commitzen`.
+5. Execute `git push` to trigger `Github Actions` or `vercel Deploy`
+<!-- 3. If you create a PR merge to main, `changeset/actions` will create a `Version Packages` PR. confirm merge `Version Packages` PR will trigger `changeset publish`, it's really publish. --
 
 ## License
 

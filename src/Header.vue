@@ -8,15 +8,14 @@ import GitHub from './icons/GitHub.vue'
 import NpmVersionSwitch from './components/npm-version-switch/index.vue'
 import { npmVersionSwitchList } from './components/npm-version-switch/helps'
 
-// @ts-ignore
 const { store } = defineProps(['store'])
 
-async function copyLink() {
+async function copyLink () {
   await navigator.clipboard.writeText(location.href)
   alert('Sharable URL has been copied to clipboard.')
 }
 
-function toggleDark() {
+function toggleDark () {
   const cls = document.documentElement.classList
   cls.toggle('dark')
   localStorage.setItem(
@@ -25,25 +24,38 @@ function toggleDark() {
   )
 }
 </script>
-
+Custom elements in iteration require 'v-bind:key' directives
 <template>
   <nav>
     <h1>
-      <img alt="logo" src="https://cdn.jsdelivr.net/npm/@vant/assets/logo.png" />
+      <img
+        alt="logo"
+        src="https://cdn.jsdelivr.net/npm/@vant/assets/logo.png"
+      >
       <span>Vant SFC Playground</span>
     </h1>
     <div class="links">
-      <NpmVersionSwitch v-for="data of npmVersionSwitchList"
+      <NpmVersionSwitch
+        v-for="data of npmVersionSwitchList"
+        :key="data.npm"
         :store="store"
         :npm="data.npm"
-        :fetchVersions="data.fetchVersions"
-        :currentCommit="data.currentCommit"
-      ></NpmVersionSwitch>
-      <button title="Toggle dark mode" class="toggle-dark" @click="toggleDark">
+        :fetch-versions="data.fetchVersions"
+        :current-commit="data.currentCommit"
+      />
+      <button
+        title="Toggle dark mode"
+        class="toggle-dark"
+        @click="toggleDark"
+      >
         <Sun class="light" />
         <Moon class="dark" />
       </button>
-      <button title="Copy sharable URL" class="share" @click="copyLink">
+      <button
+        title="Copy sharable URL"
+        class="share"
+        @click="copyLink"
+      >
         <Share />
       </button>
       <button
@@ -54,12 +66,12 @@ function toggleDark() {
         <Download />
       </button>
       <button
-          title="View on GitHub"
-          class="github"
+        title="View on GitHub"
+        class="github"
       >
         <a
-            href="https://github.com/vuejs/core/tree/main/packages/sfc-playground"
-            target="_blank"
+          href="https://github.com/vuejs/core/tree/main/packages/sfc-playground"
+          target="_blank"
         >
           <GitHub />
         </a>

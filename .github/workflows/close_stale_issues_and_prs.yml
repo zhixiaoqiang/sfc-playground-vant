@@ -1,0 +1,19 @@
+name: 'Close stale issues and PRs'
+on:
+  schedule:
+    - cron: '30 1 * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v4
+        with:
+          # Token for the repository. Can be passed in using `{{ secrets.GITHUB_TOKEN }}`.
+          repo-token: ${{ secrets.GH_PAT }}
+          # The message to post on the issue when tagging it. If none provided, will not mark issues stale.
+          stale-issue-message: 'This Issue is stale'
+          stale-pr-message: 'This PR is stale'
+          close-issue-message: 'Close Stale Issue'
+          close-pr-message: 'Close Stale PR'
+          

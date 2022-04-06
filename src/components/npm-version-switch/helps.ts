@@ -5,7 +5,7 @@ type handleVersionsFnType = (
   isInPreRelease: boolean
 ) => string[]
 
-async function fetchVersions(ownerRepo: string, handleVersions?: handleVersionsFnType): Promise<string[]> {
+async function fetchVersions (ownerRepo: string, handleVersions?: handleVersionsFnType): Promise<string[]> {
   const res = await fetch(`https://api.github.com/repos/${ownerRepo}/releases?per_page=100`)
   const releases: any[] = await res.json()
   const versions = releases.map(r =>
@@ -13,7 +13,7 @@ async function fetchVersions(ownerRepo: string, handleVersions?: handleVersionsF
   )
   // if the latest version is a pre-release, list all current pre-releases
   // otherwise filter out pre-releases
-  let isInPreRelease = versions[0].includes('-')
+  const isInPreRelease = versions[0].includes('-')
   if (handleVersions) {
     return handleVersions(versions, isInPreRelease)
   }

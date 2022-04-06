@@ -6,7 +6,7 @@ import pkg from './template/package.json?raw'
 import config from './template/vite.config.js?raw'
 import readme from './template/README.md?raw'
 
-export async function downloadProject(store: any) {
+export async function downloadProject (store: any) {
   if (!confirm('Download project files?')) {
     return
   }

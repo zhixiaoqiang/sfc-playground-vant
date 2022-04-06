@@ -13,7 +13,7 @@ import {
   additionalImports,
   additionalFiles,
   defaultDeleteTips,
-  welcomeCode,
+  welcomeCode
 } from './config'
 
 export interface StoreStateWithVantURL extends StoreState {
@@ -34,11 +34,11 @@ export class ReplStore implements Store {
   private readonly defaultVueRuntimeURL: string
   private pendingCompiler: Promise<any> | null = null
 
-  constructor({
+  constructor ({
     serializedState = '',
     defaultVueRuntimeURL = getVueRuntimeURL(version),
     showOutput = false,
-    outputMode = 'preview',
+    outputMode = 'preview'
   }: {
     serializedState?: string
     showOutput?: boolean
@@ -56,7 +56,7 @@ export class ReplStore implements Store {
       }
     } else {
       files = {
-        [defaultMainFile]: new File(defaultMainFile, welcomeCode),
+        [defaultMainFile]: new File(defaultMainFile, welcomeCode)
       }
     }
 
@@ -74,7 +74,7 @@ export class ReplStore implements Store {
       activeFile: files[mainFile],
       errors: [],
       vueRuntimeURL: this.defaultVueRuntimeURL,
-      vantURL: getVantURL(),
+      vantURL: getVantURL()
     })
 
     this.initImportMap()
@@ -89,17 +89,17 @@ export class ReplStore implements Store {
     }
   }
 
-  setActive(filename: string) {
+  setActive (filename: string) {
     this.state.activeFile = this.state.files[filename]
   }
 
-  addFile(fileOrFilename: string | File) {
+  addFile (fileOrFilename: string | File) {
     const file = typeof fileOrFilename === 'string' ? new File(fileOrFilename) : fileOrFilename
     this.state.files[file.filename] = file
     if (!file.hidden) this.setActive(file.filename)
   }
 
-  deleteFile(filename: string) {
+  deleteFile (filename: string) {
     for (const file of additionalFiles) {
       if (!file.canDelete) {
         alert(file.deleteTips || defaultDeleteTips)
@@ -115,11 +115,11 @@ export class ReplStore implements Store {
     }
   }
 
-  serialize() {
+  serialize () {
     return '#' + utoa(JSON.stringify(this.getFiles()))
   }
 
-  getFiles() {
+  getFiles () {
     const exported: Record<string, string> = {}
     for (const filename in this.state.files) {
       exported[filename] = this.state.files[filename].code
@@ -127,7 +127,7 @@ export class ReplStore implements Store {
     return exported
   }
 
-  async setFiles(newFiles: Record<string, string>, mainFile = defaultMainFile) {
+  async setFiles (newFiles: Record<string, string>, mainFile = defaultMainFile) {
     const files: Record<string, File> = {}
     if (mainFile === defaultMainFile && !newFiles[mainFile]) {
       files[mainFile] = new File(mainFile, welcomeCode)
@@ -146,7 +146,7 @@ export class ReplStore implements Store {
     this.setActive(mainFile)
   }
 
-  private initImportMap() {
+  private initImportMap () {
     const map = this.state.files['import-map.json']
     if (!map) {
       this.state.files['import-map.json'] = new File(
@@ -155,8 +155,8 @@ export class ReplStore implements Store {
           {
             imports: {
               vue: this.defaultVueRuntimeURL,
-              ...additionalImports,
-            },
+              ...additionalImports
+            }
           },
           null,
           2
@@ -181,7 +181,7 @@ export class ReplStore implements Store {
     })
   }
 
-  getImportMap() {
+  getImportMap () {
     try {
       return JSON.parse(this.state.files['import-map.json'].code)
     } catch (e) {
@@ -190,14 +190,14 @@ export class ReplStore implements Store {
     }
   }
 
-  setImportMap(map: {
+  setImportMap (map: {
     imports: Record<string, string>
     scopes?: Record<string, Record<string, string>>
   }) {
     this.state.files['import-map.json']!.code = JSON.stringify(map, null, 2)
   }
 
-  async setVueVersion(version: string) {
+  async setVueVersion (version: string) {
     const compilerUrl = getVueCompilerURL(version)
     const runtimeUrl = getVueRuntimeURL(version)
     this.pendingCompiler = import(/* @vite-ignore */ compilerUrl)
@@ -210,12 +210,12 @@ export class ReplStore implements Store {
     console.info(`[@vue/repl] Now using Vue version: ${version}`)
   }
 
-  resetVueVersion() {
+  resetVueVersion () {
     this.compiler = defaultCompiler
     this.state.vueRuntimeURL = this.defaultVueRuntimeURL
   }
 
-  async setVantVersion(version: string) {
+  async setVantVersion (version: string) {
     const vantUrl = getVantURL(version)
 
     this.state.vantURL = vantUrl
@@ -225,7 +225,7 @@ export class ReplStore implements Store {
     console.info(`[@vue/repl] Now using Vant version: ${version}`)
   }
 
-  resetVantVersion() {
+  resetVantVersion () {
     this.state.vantURL = getVantURL()
   }
 }

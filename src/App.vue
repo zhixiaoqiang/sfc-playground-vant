@@ -5,13 +5,13 @@ import { watchEffect } from 'vue'
 import { ReplStore } from './store'
 
 const setVH = () => {
-  document.documentElement.style.setProperty('--vh', window.innerHeight + `px`)
+  document.documentElement.style.setProperty('--vh', window.innerHeight + 'px')
 }
 window.addEventListener('resize', setVH)
 setVH()
 
 const store = new ReplStore({
-  serializedState: location.hash.slice(1),
+  serializedState: location.hash.slice(1)
 })
 
 // enable experimental features
@@ -28,13 +28,13 @@ watchEffect(() => history.replaceState({}, '', store.serialize()))
 <template>
   <Header :store="store" />
   <Repl
+    :store="store"
+    :show-compile-output="true"
+    :auto-resize="true"
+    :sfc-options="sfcOptions"
+    :clear-console="false"
     @keydown.ctrl.s.prevent
     @keydown.meta.s.prevent
-    :store="store"
-    :showCompileOutput="true"
-    :autoResize="true"
-    :sfcOptions="sfcOptions"
-    :clearConsole="false"
   />
 </template>
 

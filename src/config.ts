@@ -23,16 +23,15 @@ export const defaultMainFile = 'App.vue'
 export const vantInjectPlugin = 'vant-inject-plugin.js'
 
 export const vantImports = {
-  'vant': getVantURL(),
+  vant: getVantURL(),
   '@vant/use': `${DEFAULT_CDN}/@vant/use/dist/index.esm.js`,
   '@vant/popperjs': `${DEFAULT_CDN}/@vant/popperjs/dist/esm/index.js`,
-  '@vant/touch-emulator': `${DEFAULT_CDN}/@vant/touch-emulator`,
+  '@vant/touch-emulator': `${DEFAULT_CDN}/@vant/touch-emulator`
 }
 
 export const additionalImports = {
-  ...vantImports,
+  ...vantImports
 }
-
 
 export const welcomeCode = `\
 <script setup lang='ts'>
@@ -91,5 +90,5 @@ export const additionalFiles: additionalFileType[] = [{
   // hidden: true,
 
   canDelete: false,
-  deleteTips: 'vant depends on this file',
+  deleteTips: 'vant depends on this file'
 }]
