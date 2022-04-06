@@ -24,6 +24,8 @@ Try Vant in the Playground. Currently only Vant 3+ is supported
 - [ ] 🛠️ Support on-demand introduction
 - [ ] 🛠️ CLI
 - [ ] 🔑 Fully Typed APIs
+- [ ] 🛠️ Support Vant dark mode
+- [ ] 😃 Switch CDN
 
 ### Utilities
 
