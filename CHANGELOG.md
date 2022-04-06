@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.5
+
+### Patch Changes
+
+- feat(scripts): add release-tag script
+
 ## 1.0.4
 
 ### Patch Changes
