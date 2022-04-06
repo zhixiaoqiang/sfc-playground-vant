@@ -5,7 +5,8 @@
   "keywords": [
     "vant",
     "sfc",
-    "playground"
+    "playground",
+    "repl"
   ],
   "homepage": "https://sfc-playground-vant.vercel.app/",
   "bugs": {
@@ -18,6 +19,7 @@
   "license": "MIT",
   "author": "zhixiaoqiang <xdnazi1985@gmail.com> (https://zhixiaoqiang.github.io/zhixiaoqiang/)",
   "main": "index.html",
+  "types": "global.d.ts",
   "scripts": {
     "build": "vite build",
     "check:js": "eslint --ext .mjs,.ts,.js,.vue ./",
