@@ -5,8 +5,9 @@ const {
   store,
   npm,
   currentCommit,
-  fetchVersions
-} = defineProps(['store', 'npm', 'currentCommit', 'fetchVersions'])
+  fetchVersions,
+  'history-deployments': historyDeployments
+} = defineProps(['store', 'npm', 'currentCommit', 'fetchVersions', 'history-deployments'])
 
 const originCommit = currentCommit
 const activeVersion = ref(originCommit ? `@${originCommit}` : '')
@@ -77,7 +78,7 @@ onMounted(async () => {
       </li>
       <li>
         <a
-          href="https://app.netlify.com/sites/vue-sfc-playground/deploys"
+          :href="historyDeployments"
           target="_blank"
         >Commits History</a>
       </li>

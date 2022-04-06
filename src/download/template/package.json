@@ -2,11 +2,12 @@
   "name": "vite-vant-starter",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "dev": "vite",
     "serve": "vite preview"
   },
   "dependencies": {
+    "vant": "^3.4.6",
     "vue": "^3.2.0"
   },
   "devDependencies": {

@@ -194,7 +194,7 @@ export class ReplStore implements Store {
     imports: Record<string, string>
     scopes?: Record<string, Record<string, string>>
   }) {
-    this.state.files['import-map.json']!.code = JSON.stringify(map, null, 2)
+    this.state.files['import-map.json'].code = JSON.stringify(map, null, 2)
   }
 
   async setVueVersion (version: string) {

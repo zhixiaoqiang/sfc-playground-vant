@@ -31,6 +31,7 @@ export enum npmTypeEnum {
 export const npmVersionSwitchList = [
   {
     npm: npmTypeEnum.Vant,
+    historyDeployments: 'https://vercel.com/zhixiaoqiang/sfc-playground-vant/deployments',
     fetchVersions: () => fetchVersions('youzan/vant', (versions) => {
       return versions.sort((prevVersion, nextVersion) => {
         const [preMajorVersion] = prevVersion.split('.')
@@ -42,6 +43,7 @@ export const npmVersionSwitchList = [
   {
     npm: npmTypeEnum.Vue,
     currentCommit: __VUE_COMMIT__,
+    historyDeployments: 'https://app.netlify.com/sites/vue-sfc-playground/deploys',
     fetchVersions: () => fetchVersions('vuejs/core', (versions, isInPreRelease) => {
       const filteredVersions: string[] = []
       for (const v of versions) {

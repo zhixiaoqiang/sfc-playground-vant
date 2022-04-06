@@ -42,6 +42,7 @@ function toggleDark () {
         :npm="data.npm"
         :fetch-versions="data.fetchVersions"
         :current-commit="data.currentCommit"
+        :history-deployments="data.historyDeployments"
       />
       <button
         title="Toggle dark mode"
