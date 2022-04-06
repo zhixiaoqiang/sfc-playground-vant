@@ -24,7 +24,7 @@ function toggleDark () {
   )
 }
 </script>
-Custom elements in iteration require 'v-bind:key' directives
+
 <template>
   <nav>
     <h1>
