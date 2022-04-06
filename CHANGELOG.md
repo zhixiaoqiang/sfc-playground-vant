@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.3
+
+### Patch Changes
+
+- update changeset.yml scripts
+
 ## 1.0.2
 
 ### Patch Changes
