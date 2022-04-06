@@ -8,7 +8,7 @@
 
 Try Vant in the Playground. Currently only Vant 3+ is supported
 
-Detail [vercel.app](sfc-playground-vant.vercel.app/) Or [zhixiaoqiang.github.io](https://zhixiaoqiang.github.io/sfc-playground-vant/)
+Detail [vercel.app](https://sfc-playground-vant.vercel.app/) Or [zhixiaoqiang.github.io](https://zhixiaoqiang.github.io/sfc-playground-vant/)
 
 ### Utilities
 
