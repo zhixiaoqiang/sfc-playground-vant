@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.4
+
+### Patch Changes
+
+- fix: tsconfig in src/\*\* does not take effect
+
 ## 1.0.3
 
 ### Patch Changes
