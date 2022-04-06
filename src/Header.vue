@@ -70,7 +70,7 @@ Custom elements in iteration require 'v-bind:key' directives
         class="github"
       >
         <a
-          href="https://github.com/vuejs/core/tree/main/packages/sfc-playground"
+          href="https://github.com/zhixiaoqiang/sfc-playground-vant"
           target="_blank"
         >
           <GitHub />
