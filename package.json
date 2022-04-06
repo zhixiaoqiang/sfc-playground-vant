@@ -1,18 +1,23 @@
 {
-  "name": "sfc-playground-vant",
+  "name": "@jzone/sfc-playground-vant",
   "version": "1.0.1",
   "description": "Try Vant in the Playground. Currently only Vant 3+ is supported",
+  "keywords": [
+    "vant",
+    "sfc",
+    "playground"
+  ],
   "homepage": "https://sfc-playground-vant.vercel.app/",
-  "bugs": "https://github.com/zhixiaoqiang/sfc-playground-vant/issues",
+  "bugs": {
+    "url": "https://github.com/zhixiaoqiang/sfc-playground-vant/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhixiaoqiang/sfc-playground-vant"
+    "url": "git+https://github.com/zhixiaoqiang/sfc-playground-vant.git"
   },
-  "author": {
-    "name": "zhixiaoqiang",
-    "email": "xdnazi1985@gmail.com",
-    "url": "https://zhixiaoqiang.github.io/zhixiaoqiang/"
-  },
+  "license": "MIT",
+  "author": "zhixiaoqiang <xdnazi1985@gmail.com> (https://zhixiaoqiang.github.io/zhixiaoqiang/)",
+  "main": "index.html",
   "scripts": {
     "build": "vite build",
     "check:js": "eslint --ext .mjs,.ts,.js,.vue ./",
