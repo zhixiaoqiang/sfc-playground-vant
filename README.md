@@ -1,14 +1,12 @@
 # SFC Playground with Vant
 
-> This is an Vant SFC Playground.
+> This is an Vant SFC Playground. Detail [vercel.app](https://sfc-playground-vant.vercel.app/) Or [zhixiaoqiang.github.io](https://zhixiaoqiang.github.io/sfc-playground-vant/)
 
 ![main-pic](./public/vant-main-pic.png)
 
 ## What's inside?
 
 Try Vant in the Playground. Currently only Vant 3+ is supported
-
-Detail [vercel.app](https://sfc-playground-vant.vercel.app/) Or [zhixiaoqiang.github.io](https://zhixiaoqiang.github.io/sfc-playground-vant/)
 
 ### Utilities
 
