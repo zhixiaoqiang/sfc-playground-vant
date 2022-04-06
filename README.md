@@ -1,6 +1,8 @@
 # SFC Playground with Vant
 
-This is an Vant SFC Playground.
+> This is an Vant SFC Playground.
+
+![main-pic](./public/vant-main-pic.png)
 
 ## What's inside?
 
