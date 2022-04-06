@@ -29,7 +29,7 @@ Try Vant in the Playground. Currently only Vant 3+ is supported
 
 ### Utilities
 
-This turborepo has some additional tools already setup for you:
+This SFC Playground has some additional tools already setup for you:
 
 - [pnpm](https://pnpm.io) as a packages manager
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
