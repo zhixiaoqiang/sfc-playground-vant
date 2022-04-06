@@ -8,6 +8,23 @@
 
 Try Vant in the Playground. Currently only Vant 3+ is supported
 
+### Features
+
+- ⚡️ Vant 3+
+- 🤙🏻 Free switch Vant/Vue version, and more
+- 🛠️ Rich Features
+- ☁️ Deploy on Netlify/vercel/GitHub Pages, zero-config
+- 💡 Support the Typescript
+- 😃 Easy to create your own
+
+### Future Features
+> coming soon
+
+- [ ] 🛠️ Support Vant dark mode
+- [ ] 🛠️ Support on-demand introduction
+- [ ] 🛠️ CLI
+- [ ] 🔑 Fully Typed APIs
+
 ### Utilities
 
 This turborepo has some additional tools already setup for you:
@@ -51,7 +68,7 @@ pnpm dev
 5. Execute `git push` to trigger `Github Actions` or `vercel Deploy`
 <!-- 3. If you create a PR merge to main, `changeset/actions` will create a `Version Packages` PR. confirm merge `Version Packages` PR will trigger `changeset publish`, it's really publish. -->
 
-### CHANGELOG
+## CHANGELOG
 
 Please refer to [CHANGELOG](https://github.com/zhixiaoqiang/sfc-playground-vant/blob/main/CHANGELOG.md) for details.
 ## License
