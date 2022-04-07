@@ -23,8 +23,7 @@ Try Vant in the Playground. Currently only Vant 3+ is supported
 - [ ] 🛠️ Support Vant dark mode
 - [ ] 🛠️ Support on-demand introduction
 - [ ] 🛠️ CLI
-- [ ] 🔑 Fully Typed APIs
-- [ ] 🛠️ Support Vant dark mode
+- [ ] 🔑 Fully Typed API
 - [ ] 😃 Switch CDN
 
 ### Utilities
