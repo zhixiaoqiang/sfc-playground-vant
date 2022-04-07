@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.7
+
+### Patch Changes
+
+- fix: delete file fail
+
 ## 1.0.6
 
 ### Patch Changes
