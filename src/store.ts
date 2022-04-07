@@ -101,7 +101,7 @@ export class ReplStore implements Store {
 
   deleteFile (filename: string) {
     for (const file of additionalFiles) {
-      if (!file.canDelete) {
+      if (filename === file.filename && file.canDelete === false) {
         alert(file.deleteTips || defaultDeleteTips)
         return
       }
