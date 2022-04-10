@@ -16,6 +16,7 @@ Try Vant in the Playground. Currently only Vant 3+ is supported
 - ☁️ Deploy on Netlify/vercel/GitHub Pages, zero-config
 - 💡 Support the Typescript
 - 😃 Easy to create your own
+- 🤩 Download project support generated package.json by user input
 
 ### Future Features
 > coming soon
