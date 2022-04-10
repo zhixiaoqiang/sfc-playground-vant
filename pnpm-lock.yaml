@@ -20,7 +20,7 @@ specifiers:
   execa: ^4.0.2
   file-saver: ^2.0.5
   husky: ^7.0.4
-  jszip: ^3.6.0
+  jszip: ^3.9.1
   lint-staged: ^12.3.7
   markdownlint-cli2: ^0.4.0
   ora: ^6.1.0
@@ -35,7 +35,7 @@ specifiers:
 dependencies:
   '@vue/repl': 1.0.0_vue@3.2.31
   file-saver: 2.0.5
-  jszip: 3.9.0
+  jszip: 3.9.1
   vue: 3.2.31
 
 devDependencies:
@@ -2675,8 +2675,8 @@ packages:
     engines: {'0': node >= 0.2.0}
     dev: true
 
-  /jszip/3.9.0:
-    resolution: {integrity: sha512-Vb3SMfASUN1EKrFzv5A5+lTaZnzLzT5E6A9zyT7WFqMSfhT2Z7iS5FgSOjx2Olm3MDj8OqKj6GHyP2kMt1Ir6w==}
+  /jszip/3.9.1:
+    resolution: {integrity: sha512-H9A60xPqJ1CuC4Ka6qxzXZeU8aNmgOeP5IFqwJbQQwtu2EUYxota3LdsiZWplF7Wgd9tkAd0mdu36nceSaPuYw==}
     dependencies:
       lie: 3.3.0
       pako: 1.0.11
