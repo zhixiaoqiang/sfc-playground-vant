@@ -24,13 +24,13 @@ async function fetchVersions (ownerRepo: string, handleVersions?: handleVersions
 export type fetchVersionsType = typeof fetchVersions
 
 export enum npmTypeEnum {
-  Vant = 'Vant',
-  Vue = 'Vue'
+  vant = 'vant',
+  vue = 'vue'
 }
 
 export const npmVersionSwitchList = [
   {
-    npm: npmTypeEnum.Vant,
+    npm: npmTypeEnum.vant,
     historyDeployments: 'https://vercel.com/zhixiaoqiang/sfc-playground-vant/deployments',
     fetchVersions: () => fetchVersions('youzan/vant', (versions) => {
       return versions.sort((prevVersion, nextVersion) => {
@@ -41,7 +41,7 @@ export const npmVersionSwitchList = [
     })
   },
   {
-    npm: npmTypeEnum.Vue,
+    npm: npmTypeEnum.vue,
     currentCommit: __VUE_COMMIT__,
     historyDeployments: 'https://app.netlify.com/sites/vue-sfc-playground/deploys',
     fetchVersions: () => fetchVersions('vuejs/core', (versions, isInPreRelease) => {

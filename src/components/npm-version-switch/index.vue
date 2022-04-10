@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { toUpperFirstWordCase } from './utils'
 
 const {
   store,
@@ -23,13 +24,13 @@ async function toggle () {
 
 async function setVersion (v: string) {
   activeVersion.value = 'loading...'
-  await store[`set${npm}Version`](v)
+  await store[`set${toUpperFirstWordCase(npm)}Version`](v)
   activeVersion.value = `v${v}`
   expanded.value = false
 }
 
 function resetVersion () {
-  store[`reset${npm}Version`]()
+  store[`reset${toUpperFirstWordCase(npm)}Version`]()
   activeVersion.value = `@${originCommit}`
   expanded.value = false
 }

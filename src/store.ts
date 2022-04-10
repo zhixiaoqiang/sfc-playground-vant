@@ -81,7 +81,6 @@ export class ReplStore implements Store {
 
     watchEffect(() => compileFile(this, this.state.activeFile))
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const file in this.state.files) {
       if (file !== defaultMainFile) {
         compileFile(this, this.state.files[file])
@@ -169,7 +168,6 @@ export class ReplStore implements Store {
           json.imports.vue = this.defaultVueRuntimeURL
           map.code = JSON.stringify(json, null, 2)
         }
-        // eslint-disable-next-line no-empty
       } catch (e) {}
     }
 
