@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.8
+
+### Patch Changes
+
+- feat: download template support generate package.json with user input
+
 ## 1.0.7
 
 ### Patch Changes
