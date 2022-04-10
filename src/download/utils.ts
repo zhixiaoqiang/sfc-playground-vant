@@ -42,7 +42,7 @@ export function handlePackageJson (pckJsonStr: string, store: ReplStore) {
   try {
     pkgJson = JSON.parse(pckJsonStr)
   } catch (error) {
-    console.warn('parse package.json error:', error)
+    console.error('parse package.json error:', error)
   }
 
   const imports = store.getImportMap()?.imports
