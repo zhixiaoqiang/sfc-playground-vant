@@ -4,6 +4,8 @@
 
 ![main-pic](./public/vant-main-pic.png)
 
+> NOTE! The reason why this is designed to manually `import { injectVant }` is to be more universally compatible with any component library, Not only Vant.
+
 ## What's inside?
 
 Try Vant in the Playground. Currently only Vant 3+ is supported
