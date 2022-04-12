@@ -17,7 +17,7 @@ const DEFAULT_VERSION = '*'
  */
 export function getPackageVersionMap (imports: Record<string, string>) {
   return Object.entries(imports).reduce((resultImportMap, [pkgName, pkgPath]) => {
-    const version = `${pkgPath}/`.match(/@((?=[\d^~]).+?)(?=\/)/)?.[1]
+    const version = pkgPath.match(/@((?=[\d^~]).+?)((?=\/)|$)/)?.[1]
     resultImportMap[pkgName] = version ?? DEFAULT_VERSION
     return resultImportMap
   }, {} as Record<string, string>)
