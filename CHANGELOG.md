@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.9
+
+### Patch Changes
+
+- chore(script): change release-tag to release, can publish directly to npm lib
+
 ## 1.0.8
 
 ### Patch Changes

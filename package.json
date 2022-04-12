@@ -1,6 +1,6 @@
 {
   "name": "@jzone/sfc-playground-vant",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Try Vant in the Playground. Currently only Vant 3+ is supported",
   "keywords": [
     "vant",
@@ -29,7 +29,7 @@
     "lint": "zx scripts/lint.mjs",
     "markdownlint-fix": "markdownlint-cli2-fix '**.md' '#node_modules'",
     "prepare": "husky install",
-    "release-tag": "zx --experimental scripts/release-tag.mjs",
+    "release": "zx scripts/release.mjs --npmPublish",
     "serve": "vite preview",
     "sort-package-json": "sort-package-json"
   },
