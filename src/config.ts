@@ -9,8 +9,13 @@ export enum npmCdnEnum {
 
 export const DEFAULT_CDN = npmCdnEnum.jsdelivr
 
+/** get vue runtime cdn url buy version */
 export const getVueRuntimeURL = (version: string) => `${DEFAULT_CDN}/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js`
+
+/** get vue compiler cdn url buy version */
 export const getVueCompilerURL = (version: string) => `${DEFAULT_CDN}/@vue/compiler-sfc@${version}/dist/compiler-sfc.esm-browser.js`
+
+/** get vant cdn url buy version */
 export const getVantURL = (version?: string) => {
   if (version) {
     return `${DEFAULT_CDN}/vant@${version}/lib/vant.es.min.js`
