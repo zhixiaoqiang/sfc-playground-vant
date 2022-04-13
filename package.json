@@ -26,7 +26,7 @@
     "check:markdownlint": "markdownlint-cli2 '**.md' '#node_modules'",
     "check:sort-package-json": "sort-package-json --check",
     "dev": "vite",
-    "lint": "zx scripts/lint.mjs",
+    "lint": "zx scripts/lint.mjs --all",
     "markdownlint-fix": "markdownlint-cli2-fix '**.md' '#node_modules'",
     "prepare": "husky install",
     "release": "zx scripts/release.mjs --npmPublish",

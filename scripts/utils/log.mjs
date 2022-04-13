@@ -1,8 +1,6 @@
 import { chalk } from 'zx'
 import ora from 'ora'
 
-// type ColorType = (typeof chalk)['Color']
-
 /**
  * 打印流程信息
  * @param {String} content
@@ -20,14 +18,14 @@ export function logProcessInfo (content, colorType) {
 /**
  * 打印检测流程信息
  * @param {String} content e.g. build
- * @param {() => Promise<void>} cb 中间执行的函数
+ * @param {() => Promise<void>} handleFn 中间执行的函数
  * @returns success callback
  */
-export async function checkProcess (content, cb) {
+export async function checkProcess (content, handleFn) {
   const stopFn = logProcessInfo(`check ${content} \n`, 'blueBright')
 
-  if (cb) {
-    await Promise.resolve(cb()).finally(() => stopFn(`${content} passed`, 'greenBright'))
+  if (handleFn) {
+    await Promise.resolve(handleFn()).finally(() => stopFn(`${content} passed`, 'greenBright'))
     return
   }
 
