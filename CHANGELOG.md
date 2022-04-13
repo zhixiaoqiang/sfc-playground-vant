@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.10
+
+### Patch Changes
+
+- chore: some improve'
+
 ## 1.0.9
 
 ### Patch Changes
