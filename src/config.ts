@@ -40,7 +40,6 @@ import { Button } from 'vant';
 import { injectVant } from './vant-inject-plugin.js'
 
 injectVant()
-const checked = ref(true);
 const msg = ref('Hello Vant!')
 </script>
 
