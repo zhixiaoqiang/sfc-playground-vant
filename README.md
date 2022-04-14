@@ -42,7 +42,7 @@ This SFC Playground has some additional tools already setup for you:
 
 ## Get Started
 
-1. Click `Use this template`, and clone your repo `degit https://github.com/zhixiaoqiang/sfc-playground-vant`. [degit](https://github.com/Rich-Harris/degit)
+1. Click `Use this template`, and clone your repo `degit https://github.com/zhixiaoqiang/sfc-playground-vant` or `git clone https://github.com/zhixiaoqiang/sfc-playground-vant --depth 1`. [degit](https://github.com/Rich-Harris/degit)
 2. Adjust the following files.
 
 ```bash
