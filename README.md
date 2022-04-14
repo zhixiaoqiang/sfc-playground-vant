@@ -42,8 +42,17 @@ This SFC Playground has some additional tools already setup for you:
 
 ## Get Started
 
-0. Click `Use this template`, and clone your repo `git clone https://github.com/zhixiaoqiang/sfc-playground-vant --depth 1`.
-1. config `src/config.ts`、`src/store.ts` and `src/components/npm-version-switch/helps.ts`.
+1. Click `Use this template`, and clone your repo `degit https://github.com/zhixiaoqiang/sfc-playground-vant`. [degit](https://github.com/Rich-Harris/degit)
+2. Adjust the following files.
+
+```bash
+src
+├── components
+│   └── npm-version-switch
+│       ├── helps.ts # add version switch feature
+├── config.ts # config welcome code、CDN、additionalFiles...
+├── store.ts # includes base functions...
+```
 
 then it'll be your repository totally.
 
