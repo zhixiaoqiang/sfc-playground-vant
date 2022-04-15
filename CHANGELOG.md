@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.12
+
+### Patch Changes
+
+- chore(scripts): add only-allow.mjs, it will recommend the correct package manager
+
 ## 1.0.11
 
 ### Patch Changes
