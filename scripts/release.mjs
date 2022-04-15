@@ -3,8 +3,7 @@
 import { $, fs } from './utils/enhanceZX.mjs'
 import Argv from './utils/enhanceArgv.mjs'
 
-const packageJson = await fs.readFile(new URL('../package.json', import.meta.url))
-const json = JSON.parse((String(packageJson)))
+const { version } = await fs.readJSON('package.json')
 
 /**
  * --tagPublish set tagPublish to true, default true
@@ -19,7 +18,7 @@ const json = JSON.parse((String(packageJson)))
 const { tagPublish = true, pushRepo = true, npmPublish } = Argv
 
 if (tagPublish) {
-  await $`git tag v${json.version}`
+  await $`git tag v${version}`
   await $`git push origin --tags`
 }
 
