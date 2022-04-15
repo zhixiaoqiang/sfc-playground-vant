@@ -7,4 +7,4 @@ export const PNPM_LOCK = 'pnpm-lock.yaml'
 export const YARN = 'yarn'
 export const YARN_LOCK = 'yarn.lock'
 
-export const supportPackageManageList = [NPM, CNPM, PNPM, YARN]
+export const supportPackageManagerList = [NPM, CNPM, PNPM, YARN]
