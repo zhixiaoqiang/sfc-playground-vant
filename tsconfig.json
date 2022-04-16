@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "dist",
     "sourceMap": false,
     "useDefineForClassFields": false,
@@ -25,6 +25,7 @@
   "include": [
     "global.d.ts",
     "src/**/*.ts",
+    "vite.config.ts"
   ],
   "exclude": [
     "node_modules",

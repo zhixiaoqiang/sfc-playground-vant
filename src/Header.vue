@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { downloadProject } from './download/download'
 import Sun from './icons/Sun.vue'
 import Moon from './icons/Moon.vue'
 import Share from './icons/Share.vue'
@@ -23,6 +22,11 @@ function toggleDark () {
     String(cls.contains('dark'))
   )
 }
+
+const downloadProject = async (store) => {
+  (await import('./download/download')).downloadProject(store)
+}
+
 </script>
 
 <template>

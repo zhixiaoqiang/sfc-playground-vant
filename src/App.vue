@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import Header from './Header.vue'
 import { Repl } from '@vue/repl'
 import { watchEffect } from 'vue'
+
 import { ReplStore } from './store'
+import Header from './Header.vue'
 
 const setVH = () => {
   document.documentElement.style.setProperty('--vh', window.innerHeight + 'px')
