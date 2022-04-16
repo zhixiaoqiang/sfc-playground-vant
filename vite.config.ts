@@ -5,7 +5,7 @@ import execa from 'execa'
 
 const commit = execa.sync('git', ['rev-parse', 'HEAD']).stdout.slice(0, 7)
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   base: './',
   plugins: [
     vue(),
@@ -18,6 +18,6 @@ export default defineConfig({
     __VUE_PROD_DEVTOOLS__: JSON.stringify(true)
   },
   optimizeDeps: {
-    exclude: ['@vue/repl']
+    exclude: [command === 'serve' ? '@vue/repl' : '']
   }
-})
+}))

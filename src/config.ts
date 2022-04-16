@@ -68,8 +68,6 @@ import { getCurrentInstance } from 'vue'
 import Vant from 'vant'
 import '@vant/touch-emulator'
 
-await appendStyle()
-
 export function injectVant() {
   const instance = getCurrentInstance()
   instance.appContext.app.use(Vant)
@@ -85,6 +83,8 @@ export function appendStyle() {
     document.body.appendChild(link)
   })
 }
+
+await appendStyle()
 `
 
 export type additionalFileType = Pick<File, 'filename' | 'code'> & Partial<Omit<File, 'filename' | 'code'>> & {
