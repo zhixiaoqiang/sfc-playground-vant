@@ -84,6 +84,8 @@ pnpm dev
 ## CHANGELOG
 
 Please refer to [CHANGELOG](https://github.com/zhixiaoqiang/sfc-playground-vant/blob/main/CHANGELOG.md) for details.
+
+Inspired by [Evan You's](https://github.com/yyx990803) [Vue SFC Playground](https://sfc.vuejs.org/)
 ## License
 
 MIT
