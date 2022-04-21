@@ -1,6 +1,7 @@
+import { join } from 'path'
+import { fileURLToPath } from 'url'
 import { fs, chalk } from './enhanceZX.mjs'
 import Argv from './enhanceArgv.mjs'
-
 import { supportPackageManagerList, NPM, NPM_LOCK, PNPM, PNPM_LOCK, YARN, YARN_LOCK, CNPM } from '../constants/package-manager.mjs'
 
 const { existsSync } = fs
@@ -31,6 +32,11 @@ function getPackageManagerFormUserAgent () {
   }
 }
 
+const checkModulesPathExists = (fileName) => {
+  const __dirname = fileURLToPath(import.meta.url)
+  return existsSync(join(__dirname, '../../../node_modules', fileName))
+}
+
 /** detect the package manager from argv then from the project lock file. */
 function detectExpectPackageManager () {
   const [allowPackageManager] = Argv._
@@ -39,9 +45,9 @@ function detectExpectPackageManager () {
 
   if (existsSync(PNPM_LOCK)) {
     return PNPM
-  } else if (existsSync(YARN_LOCK)) {
+  } else if (existsSync(YARN_LOCK) || checkModulesPathExists('.yarn-integrity')) {
     return YARN
-  } else if (existsSync(NPM_LOCK)) {
+  } else if (existsSync(NPM_LOCK) || checkModulesPathExists('.pnpm')) {
     return NPM
   }
 
