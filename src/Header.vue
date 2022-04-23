@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onBeforeMount } from 'vue'
 import Sun from './icons/Sun.vue'
 import Moon from './icons/Moon.vue'
 import Share from './icons/Share.vue'
@@ -6,8 +7,13 @@ import Download from './icons/Download.vue'
 import GitHub from './icons/GitHub.vue'
 import NpmVersionSwitch from './components/npm-version-switch/index.vue'
 import { npmVersionSwitchList } from './components/npm-version-switch/helps'
+import { preFetchImportsFile } from './config'
 
 const { store } = defineProps(['store'])
+
+onBeforeMount(() => {
+  preFetchImportsFile(store.getImportMap().imports)
+})
 
 async function copyLink () {
   await navigator.clipboard.writeText(location.href)

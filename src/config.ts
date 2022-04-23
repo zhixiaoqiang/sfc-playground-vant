@@ -15,6 +15,8 @@ export const getVueRuntimeURL = (version: string) => `${DEFAULT_CDN}/@vue/runtim
 /** get vue compiler cdn url buy version */
 export const getVueCompilerURL = (version: string) => `${DEFAULT_CDN}/@vue/compiler-sfc@${version}/dist/compiler-sfc.esm-browser.js`
 
+export const vantCss = `${DEFAULT_CDN}/vant/lib/index.css`
+
 /** get vant cdn url buy version */
 export const getVantURL = (version?: string) => {
   if (version) {
@@ -36,6 +38,22 @@ export const vantImports = {
 
 export const additionalImports = {
   ...vantImports
+}
+/**
+ * preload ImportsFile, reduce subsequent loading times by more than 50%
+ */
+export function preFetchImportsFile (imports?: Record<string, string>) {
+  const fragment = document.createDocumentFragment();
+  [...Object.values(imports || additionalImports), vantCss].forEach((src) => {
+    const isCss = src.endsWith('.css')
+    const usedLaterScript = document.createElement('link')
+    usedLaterScript.href = src
+    // preload
+    usedLaterScript.rel = 'modulepreload'
+    usedLaterScript.as = isCss ? 'style' : 'script'
+    fragment.appendChild(usedLaterScript)
+  })
+  document.head.appendChild(fragment)
 }
 
 export const welcomeCode = `\
@@ -59,8 +77,6 @@ const msg = ref('Hello Vant!')
   <van-Button type="primary">{{ msg }}</van-Button>
 </template>
 `
-
-export const vantCss = `${DEFAULT_CDN}/vant/lib/index.css`
 
 export const vantReplPluginCode = `\
 import { getCurrentInstance } from 'vue'
