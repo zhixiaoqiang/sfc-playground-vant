@@ -7,7 +7,7 @@ import Download from './icons/Download.vue'
 import GitHub from './icons/GitHub.vue'
 import NpmVersionSwitch from './components/npm-version-switch/index.vue'
 import { npmVersionSwitchList } from './components/npm-version-switch/helps'
-import { preFetchImportsFile } from './config'
+import { preFetchImportsFile } from './utils/preload'
 
 const { store } = defineProps(['store'])
 

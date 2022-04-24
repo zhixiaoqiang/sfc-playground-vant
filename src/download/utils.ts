@@ -8,11 +8,10 @@ const DEFAULT_VERSION = '*'
  * e.g. {
  *
  *  "vue": "https://cdn.jsdelivr.net/npm/@vue/runtime-dom@3.2.31/dist/runtime-dom.esm-browser.js",
-
+ *
  *  "@vant/use": "https://cdn.jsdelivr.net/npm/@vant/use/dist/index.esm.js"
  *
  * }
- *
  * @returns { "vue": "3.2.31", "@vant/use": "*" }
  */
 export function getPackageVersionMap (imports: Record<string, string>) {

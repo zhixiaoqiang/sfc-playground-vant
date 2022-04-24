@@ -7,9 +7,9 @@ type handleVersionsFnType = (
 
 async function fetchVersions (ownerRepo: string, handleVersions?: handleVersionsFnType): Promise<string[]> {
   const res = await fetch(`https://api.github.com/repos/${ownerRepo}/releases?per_page=100`)
-  const releases: any[] = await res.json()
-  const versions = releases.map(r =>
-    /^v/.test(r.tag_name) ? r.tag_name.slice(1) : r.tag_name
+  const releases: Record<string, string>[] = await res.json()
+  const versions = releases.map(releaseItem =>
+    /^v/.test(releaseItem.tag_name) ? releaseItem.tag_name.slice(1) : releaseItem.tag_name
   )
   // if the latest version is a pre-release, list all current pre-releases
   // otherwise filter out pre-releases
