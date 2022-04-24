@@ -13,12 +13,13 @@ Try Vant in the Playground. Currently only Vant 3+ is supported
 ### Features
 
 - ⚡️ Vant 3+
+- ⚡️ PreLoad ImportsFile,Instantly display content([e0d5c6](https://github.com/zhixiaoqiang/sfc-playground-vant/commit/e0d5c6cd56ced1805b07ff6cddb9fe759c8cfbf5))
 - 🤙🏻 Free switch Vant/Vue version, and more
 - 🛠️ Rich Features
 - ☁️ Deploy on Netlify/vercel/GitHub Pages, zero-config
 - 💡 Support the Typescript
 - 😃 Easy to create your own
-- 🤩 Download project support generated package.json by user input ([#13ee3f](https://github.com/zhixiaoqiang/sfc-playground-vant/commit/13ee3f8ec73a6c77a0146b3625464854d2aab713))
+- 🤩 Download project support generated package.json by user input ([13ee3f](https://github.com/zhixiaoqiang/sfc-playground-vant/commit/13ee3f8ec73a6c77a0146b3625464854d2aab713))
 
 ### Future Features
 > coming soon

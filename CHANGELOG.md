@@ -1,5 +1,11 @@
 # SFC Playground with Vant
 
+## 1.0.13
+
+### Patch Changes
+
+- feat: preload ImportsFile, reduce subsequent loading times by more than 50%
+
 ## 1.0.12
 
 ### Patch Changes
