@@ -17,6 +17,10 @@ export const getVueCompilerURL = (version: string) => `${DEFAULT_CDN}/@vue/compi
 
 export const vantCss = `${DEFAULT_CDN}/vant/lib/index.css`
 
+export const additionalImportsCss = [
+  vantCss
+]
+
 /** get vant cdn url buy version */
 export const getVantURL = (version?: string) => {
   if (version) {
