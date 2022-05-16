@@ -1,5 +1,12 @@
 # SFC Playground with Vant
 
+## 1.0.14
+
+### Patch Changes
+
+- 9874d1a: feat: use wireit upgrades npm scripts to make them smarter and more efficient
+- 9874d1a: chore: upgrade wireit
+
 ## 1.0.13
 
 ### Patch Changes
