@@ -21,19 +21,20 @@
   "main": "index.html",
   "types": "global.d.ts",
   "scripts": {
-    "build": "vite build",
-    "check:js": "eslint --ext .mjs,.ts,.js,.vue ./",
-    "check:markdownlint": "markdownlint-cli2 '**.md' '#node_modules'",
-    "check:sort-package-json": "sort-package-json --check",
-    "dev": "vite",
-    "preinstall": "node scripts/only-allow.mjs pnpm",
-    "lint": "zx scripts/lint.mjs --all",
-    "markdownlint-fix": "markdownlint-cli2-fix '**.md' '#node_modules'",
-    "prepare": "husky install",
-    "preview": "vite preview",
-    "release": "zx scripts/release.mjs --npmPublish",
-    "serve": "vite preview",
-    "sort-package-json": "sort-package-json"
+    "build": "wireit",
+    "check:all": "wireit",
+    "check:js": "wireit",
+    "check:markdownlint": "wireit",
+    "check:sort-package-json": "wireit",
+    "dev": "wireit",
+    "preinstall": "wireit",
+    "lint": "wireit",
+    "markdownlint-fix": "wireit",
+    "prepare": "wireit",
+    "preview": "wireit",
+    "release": "wireit",
+    "serve": "wireit",
+    "sort-package-json": "wireit"
   },
   "dependencies": {
     "@vue/repl": "^1.0.0",
@@ -68,6 +69,7 @@
     "vite": "2.9.7",
     "vite-plugin-style-import": "1.4.1",
     "vue-eslint-parser": "8.3.0",
+    "wireit": "^0.4.3",
     "zx": "6.1.0"
   },
   "peerDependencies": {
@@ -75,5 +77,50 @@
   },
   "renovate": {
     "enabled": false
+  },
+  "wireit": {
+    "build": {
+      "command": "vite build"
+    },
+    "dev": {
+      "command": "vite"
+    },
+    "preinstall": {
+      "command": "node scripts/only-allow.mjs pnpm"
+    },
+    "prepare": {
+      "command": "husky install"
+    },
+    "release": {
+      "command": "zx scripts/release.mjs --npmPublish"
+    },
+    "serve": {
+      "command": "vite preview"
+    },
+    "check:js": {
+      "command": "eslint --ext .mjs,.ts,.js,.vue ./"
+    },
+    "check:markdownlint": {
+      "command": "markdownlint-cli2 '**.md' '#node_modules'"
+    },
+    "check:sort-package-json": {
+      "command": "sort-package-json --check"
+    },
+    "check:all": {
+      "dependencies": [
+        "check:js",
+        "check:markdownlint",
+        "check:sort-package-json"
+      ]
+    },
+    "lint": {
+      "command": "zx scripts/lint.mjs --all"
+    },
+    "markdownlint-fix": {
+      "command": "markdownlint-cli2-fix '**.md' '#node_modules'"
+    },
+    "sort-package-json": {
+      "command": "sort-package-json"
+    }
   }
 }
