@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.22.0
   '@typescript-eslint/parser': 5.22.0
   '@vitejs/plugin-vue': 2.3.1
-  '@vue/repl': ^1.0.0
+  '@vue/repl': ^1.1.1
   eslint: 8.14.0
   eslint-config-standard: 16.0.3
   eslint-module-utils: 2.7.3
@@ -35,7 +35,7 @@ specifiers:
   zx: 6.1.0
 
 dependencies:
-  '@vue/repl': 1.0.0_vue@3.2.33
+  '@vue/repl': 1.1.1_vue@3.2.33
   file-saver: 2.0.5
   jszip: 3.9.1
   vue: 3.2.33
@@ -819,8 +819,8 @@ packages:
       '@vue/shared': 3.2.33
     dev: false
 
-  /@vue/repl/1.0.0_vue@3.2.33:
-    resolution: {integrity: sha512-cDcQuWKZuA0Y0JYEpiQS/ZAEGP/RrfkcK+zKm5H8tUjfD8XIxYHY+sQGoY6FSkz/gAOQJocrsaPgt7ddKL0inQ==}
+  /@vue/repl/1.1.1_vue@3.2.33:
+    resolution: {integrity: sha512-PrgzaCQQ4ME2UD8iGvCxtznc5lB/FaQtzTWJgimo+kQ/AmCG7OeJzuhjRi9BRmtx0PN9UYmRd1mDQD6lhWEUpg==}
     peerDependencies:
       vue: ^3.2.13
     dependencies:
