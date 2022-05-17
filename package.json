@@ -69,7 +69,7 @@
     "vite": "2.9.7",
     "vite-plugin-style-import": "1.4.1",
     "vue-eslint-parser": "8.3.0",
-    "wireit": "^0.4.3",
+    "wireit": "0.4.3",
     "zx": "6.1.0"
   },
   "peerDependencies": {
