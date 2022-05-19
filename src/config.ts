@@ -7,7 +7,7 @@ export enum npmCdnEnum {
   cndjs = 'https://cdnjs.com/libraries'
 }
 
-export const DEFAULT_CDN = npmCdnEnum.jsdelivr
+export const DEFAULT_CDN = npmCdnEnum.unpkg
 
 /** get vue runtime cdn url buy version */
 export const getVueRuntimeURL = (version: string) => `${DEFAULT_CDN}/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js`
