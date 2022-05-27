@@ -1,5 +1,9 @@
 import { vantImports } from './config'
 
+/**
+ * fix wrong cdn url already in use
+ * @param importMap { "vant": "xx" }
+ */
 export const convertBugImportMapCdnUrl = (importMap: Record<string, string>) => {
   const someBugImportData = [{
     name: '@vant/use',
