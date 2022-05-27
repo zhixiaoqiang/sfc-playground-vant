@@ -2,7 +2,7 @@
 
 > This is an Vant SFC Playground. Detail [vercel.app](https://sfc-playground-vant.vercel.app/) Or [zhixiaoqiang.github.io](https://zhixiaoqiang.github.io/sfc-playground-vant/)
 
-![main-pic](https://cdn.jsdelivr.net/npm/@jzone/sfc-playground-vant/public/vant-main-pic.png)
+![main-pic](https://unpkg.com/@jzone/sfc-playground-vant/public/vant-main-pic.png)
 
 > NOTE! The reason why this is designed to manually `import { injectVant }` is to be more universally compatible with any component library, Not only Vant.
 

@@ -35,8 +35,8 @@ export const vantInjectPlugin = 'vant-inject-plugin.js'
 
 export const vantImports = {
   vant: getVantURL(),
-  '@vant/use': `${DEFAULT_CDN}/@vant/use/dist/index.esm.js`,
-  '@vant/popperjs': `${DEFAULT_CDN}/@vant/popperjs/dist/esm/index.js`,
+  '@vant/use': `${DEFAULT_CDN}/@vant/use/dist/index.esm.mjs`,
+  '@vant/popperjs': `${DEFAULT_CDN}/@vant/popperjs/dist/index.esm.mjs`,
   '@vant/touch-emulator': `${DEFAULT_CDN}/@vant/touch-emulator`
 }
 

@@ -7,9 +7,9 @@ const DEFAULT_VERSION = '*'
  *
  * e.g. {
  *
- *  "vue": "https://cdn.jsdelivr.net/npm/@vue/runtime-dom@3.2.31/dist/runtime-dom.esm-browser.js",
+ *  "vue": "https://unpkg.com/@vue/runtime-dom@3.2.31/dist/runtime-dom.esm-browser.js",
  *
- *  "@vant/use": "https://cdn.jsdelivr.net/npm/@vant/use/dist/index.esm.js"
+ *  "@vant/use": "https://unpkg.com/@vant/use/dist/index.esm.js"
  *
  * }
  * @returns { "vue": "3.2.31", "@vant/use": "*" }

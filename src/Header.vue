@@ -40,7 +40,7 @@ const downloadProject = async (store) => {
     <h1>
       <img
         alt="logo"
-        src="https://cdn.jsdelivr.net/npm/@vant/assets/logo.png"
+        src="https://unpkg.com/@vant/assets/logo.png"
       >
       <span>Vant SFC Playground</span>
     </h1>
