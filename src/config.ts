@@ -45,7 +45,7 @@ export const getCdnUrl = (npmName: string, filePath?: string) => {
   return `${DEFAULT_CDN}/${npmName}/${filePath}`
 }
 
-export const vantImports = {
+export const vantImports: Record<string, string> = {
   vant: getVantURL(),
   '@vant/use': getCdnUrl('@vant/use', '/dist/index.esm.mjs'),
   '@vant/popperjs': getCdnUrl('@vant/popperjs', '/dist/index.esm.mjs'),

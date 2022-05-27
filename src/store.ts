@@ -16,6 +16,8 @@ import {
   welcomeCode
 } from './config'
 
+import { convertBugImportMapCdnUrl } from './helpers'
+
 export interface StoreStateWithVantURL extends StoreState {
   vantURL?: string
 }
@@ -52,7 +54,15 @@ export class ReplStore implements Store {
       const saved = JSON.parse(atou(serializedState))
       // eslint-disable-next-line no-restricted-syntax
       for (const filename of Object.keys(saved)) {
-        files[filename] = new File(filename, saved[filename])
+        let codeContent = saved[filename]
+        // fix some error cdn url
+        if (filename === 'import-map.json') {
+          const json = JSON.parse(codeContent)
+          convertBugImportMapCdnUrl(json.imports)
+          codeContent = JSON.stringify(json, null, 2)
+        }
+
+        files[filename] = new File(filename, codeContent)
       }
     } else {
       files = {
@@ -164,6 +174,8 @@ export class ReplStore implements Store {
     } else {
       try {
         const json = JSON.parse(map.code)
+        convertBugImportMapCdnUrl(json.imports)
+
         if (!json.imports.vue) {
           json.imports.vue = this.defaultVueRuntimeURL
           map.code = JSON.stringify(json, null, 2)
@@ -181,7 +193,9 @@ export class ReplStore implements Store {
 
   getImportMap () {
     try {
-      return JSON.parse(this.state.files['import-map.json'].code)
+      const codeJson = JSON.parse(this.state.files['import-map.json'].code)
+      convertBugImportMapCdnUrl(codeJson.imports)
+      return codeJson
     } catch (e) {
       this.state.errors = [`Syntax error in import-map.json: ${(e as Error).message}`]
       return {}
