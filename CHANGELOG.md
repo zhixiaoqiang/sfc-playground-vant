@@ -1,5 +1,12 @@
 # SFC Playground with Vant
 
+## 1.0.15
+
+### Patch Changes
+
+- fix: @vant/popperjs @vant/use dist fileName break-change
+- fix: fix wrong cdn url already in use
+
 ## 1.0.14
 
 ### Patch Changes
