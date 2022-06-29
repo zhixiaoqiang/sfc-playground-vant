@@ -27,6 +27,7 @@
     "check:markdownlint": "wireit",
     "check:sort-package-json": "wireit",
     "dev": "wireit",
+    "fresh-deps": "wireit",
     "preinstall": "wireit",
     "lint": "wireit",
     "markdownlint-fix": "wireit",
@@ -37,9 +38,9 @@
     "sort-package-json": "wireit"
   },
   "dependencies": {
-    "@vue/repl": "^1.1.1",
+    "@vue/repl": "^1.3.0",
     "file-saver": "^2.0.5",
-    "jszip": "^3.9.1",
+    "jszip": "^3.10.0",
     "vue": "3.2.37"
   },
   "devDependencies": {
@@ -121,6 +122,9 @@
     },
     "sort-package-json": {
       "command": "sort-package-json"
+    },
+    "fresh-deps": {
+      "command": "npx taze"
     }
   }
 }
