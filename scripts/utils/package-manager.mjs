@@ -1,4 +1,4 @@
-import { join } from 'path'
+import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { fs, chalk } from './enhanceZX.mjs'
 import Argv from './enhanceArgv.mjs'
@@ -33,8 +33,9 @@ function getPackageManagerFormUserAgent () {
 }
 
 const checkModulesPathExists = (fileName) => {
-  const __dirname = fileURLToPath(import.meta.url)
-  return existsSync(join(__dirname, '../../../node_modules', fileName))
+  const __dirname = fileURLToPath(dirname(import.meta.url))
+  console.log('__dirname', __dirname, join(__dirname, '../../node_modules', fileName))
+  return existsSync(join(__dirname, '../../node_modules', fileName))
 }
 
 /** detect the package manager from argv then from the project lock file. */
