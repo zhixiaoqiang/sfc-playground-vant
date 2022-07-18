@@ -24,10 +24,10 @@ export const additionalImportsCss = [
 /** get vant cdn url buy version */
 export const getVantURL = (version?: string) => {
   if (version) {
-    return `${DEFAULT_CDN}/vant@${version}/lib/vant.es.min.js`
+    return `${DEFAULT_CDN}/vant@${version}/lib/vant.es.js`
   }
 
-  return `${DEFAULT_CDN}/vant/lib/vant.es.min.js`
+  return `${DEFAULT_CDN}/vant/lib/vant.es.js`
 }
 
 export const defaultMainFile = 'App.vue'
