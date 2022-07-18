@@ -22,6 +22,15 @@ export interface StoreStateWithVantURL extends StoreState {
   vantURL?: string
 }
 
+export interface StoreOptions {
+  serializedState?: string
+  showOutput?: boolean
+  // loose type to allow getting from the URL without inducing a typing error
+  outputMode?: OutputModes | string
+  defaultVueRuntimeURL?: string
+  defaultVueServerRendererURL?: string
+}
+
 export class ReplStore implements Store {
   state: StoreStateWithVantURL
 
@@ -34,20 +43,16 @@ export class ReplStore implements Store {
   initialOutputMode: OutputModes = 'preview'
 
   private readonly defaultVueRuntimeURL: string
+  private defaultVueServerRendererURL: string
   private pendingCompiler: Promise<any> | null = null
 
   constructor ({
     serializedState = '',
     defaultVueRuntimeURL = getVueRuntimeURL(version),
+    defaultVueServerRendererURL = `https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js`,
     showOutput = false,
     outputMode = 'preview'
-  }: {
-    serializedState?: string
-    showOutput?: boolean
-    // loose type to allow getting from the URL without inducing a typing error
-    outputMode?: OutputModes | string
-    defaultVueRuntimeURL?: string
-  }) {
+  }: StoreOptions) {
     let files: StoreStateWithVantURL['files'] = {}
 
     if (serializedState) {
@@ -71,6 +76,7 @@ export class ReplStore implements Store {
     }
 
     this.defaultVueRuntimeURL = defaultVueRuntimeURL
+    this.defaultVueServerRendererURL = defaultVueServerRendererURL
     this.initialShowOutput = showOutput
     this.initialOutputMode = outputMode as OutputModes
 
@@ -84,11 +90,15 @@ export class ReplStore implements Store {
       activeFile: files[mainFile],
       errors: [],
       vueRuntimeURL: this.defaultVueRuntimeURL,
-      vantURL: getVantURL()
+      vantURL: getVantURL(),
+      vueServerRendererURL: this.defaultVueServerRendererURL
     })
 
     this.initImportMap()
+  }
 
+  // don't start compiling until the options are set
+  init () {
     watchEffect(() => compileFile(this, this.state.activeFile))
 
     for (const file in this.state.files) {
@@ -97,6 +107,10 @@ export class ReplStore implements Store {
       }
     }
   }
+
+  // init () {
+  //   this.init()
+  // }
 
   setActive (filename: string) {
     this.state.activeFile = this.state.files[filename]
