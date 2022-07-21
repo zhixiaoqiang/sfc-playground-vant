@@ -74,9 +74,6 @@
     "wireit": "0.7.1",
     "zx": "6.2.5"
   },
-  "peerDependencies": {
-    "vant": "^3.4.6"
-  },
   "renovate": {
     "enabled": false
   },
