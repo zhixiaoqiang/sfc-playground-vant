@@ -1,6 +1,6 @@
 # SFC Playground with Vant
 
-> This is an Vant SFC Playground. Detail [vercel.app](https://sfc-playground-vant.vercel.app/) Or [zhixiaoqiang.github.io](https://zhixiaoqiang.github.io/sfc-playground-vant/)
+> This is an Vant SFC Playground. Click the [vercel.app](https://sfc-playground-vant.vercel.app/) Or [zhixiaoqiang.github.io](https://zhixiaoqiang.github.io/sfc-playground-vant/) link to view.
 
 ![main-pic](https://unpkg.com/@jzone/sfc-playground-vant/public/vant-main-pic.png)
 
