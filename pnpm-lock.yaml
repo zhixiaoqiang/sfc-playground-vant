@@ -11,7 +11,7 @@ specifiers:
   '@vitejs/plugin-vue': 2.3.3
   '@vue/repl': ^1.3.0
   eslint: 8.21.0
-  eslint-config-standard: 16.0.3
+  eslint-config-standard: 17.0.0
   eslint-module-utils: 2.7.3
   eslint-plugin-import: 2.26.0
   eslint-plugin-node: 11.1.0
@@ -52,7 +52,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.32.0_qugx7qdu5zevzvxaiqyxfiwquq
   '@vitejs/plugin-vue': 2.3.3_vite@2.9.14+vue@3.2.37
   eslint: 8.21.0
-  eslint-config-standard: 16.0.3_ajhs5bkv6wqipo3f2ni5vugdai
+  eslint-config-standard: 17.0.0_r3vneucqmfto7cjjmndd6x5smy
   eslint-module-utils: 2.7.3_egz5gz2tpdc465tc272jb6qhoe
   eslint-plugin-import: 2.26.0_wuikv5nqgdfyng42xxm7lklfmi
   eslint-plugin-node: 11.1.0_eslint@8.21.0
@@ -1323,8 +1323,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -1840,17 +1840,16 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-standard/16.0.3_ajhs5bkv6wqipo3f2ni5vugdai:
-    resolution: {integrity: sha512-x4fmJL5hGqNJKGHSjnLdgA6U6h1YW/G2dW9fA+cyVur4SK6lyue8+UgNKWlZtUDTXvgKDD/Oa3GQjmB5kjtVvg==}
+  /eslint-config-standard/17.0.0_r3vneucqmfto7cjjmndd6x5smy:
+    resolution: {integrity: sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==}
     peerDependencies:
-      eslint: ^7.12.1
-      eslint-plugin-import: ^2.22.1
-      eslint-plugin-node: ^11.1.0
-      eslint-plugin-promise: ^4.2.1 || ^5.0.0
+      eslint: ^8.0.1
+      eslint-plugin-import: ^2.25.2
+      eslint-plugin-n: ^15.0.0
+      eslint-plugin-promise: ^6.0.0
     dependencies:
       eslint: 8.21.0
       eslint-plugin-import: 2.26.0_wuikv5nqgdfyng42xxm7lklfmi
-      eslint-plugin-node: 11.1.0_eslint@8.21.0
       eslint-plugin-promise: 6.0.0_eslint@8.21.0
     dev: true
 
