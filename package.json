@@ -59,7 +59,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.0.0",
-    "eslint-plugin-vue": "8.7.1",
+    "eslint-plugin-vue": "9.3.0",
     "execa": "4.1.0",
     "husky": "7.0.4",
     "lint-staged": "13.0.3",
