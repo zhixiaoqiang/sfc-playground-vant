@@ -1,15 +1,15 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import styleImport, { VantResolve } from 'vite-plugin-style-import'
-import execa from 'execa'
+import { createStyleImportPlugin, VantResolve } from 'vite-plugin-style-import'
+import { execaSync } from 'execa'
 
-const commit = execa.sync('git', ['rev-parse', 'HEAD']).stdout.slice(0, 7)
+const commit = execaSync('git', ['rev-parse', 'HEAD']).stdout.slice(0, 7)
 
 export default defineConfig(({ command }) => ({
   base: './',
   plugins: [
     vue(),
-    styleImport({
+    createStyleImportPlugin({
       resolves: [VantResolve()]
     })
   ],
