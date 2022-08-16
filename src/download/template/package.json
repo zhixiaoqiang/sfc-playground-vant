@@ -14,9 +14,9 @@
     "vue": "3.2.37"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "2.3.3",
+    "@vitejs/plugin-vue": "2.3.4",
     "@vue/compiler-sfc": "3.2.37",
-    "vite": "2.9.14",
+    "vite": "2.9.15",
     "vite-plugin-style-import": "2.0.0"
   }
 }
