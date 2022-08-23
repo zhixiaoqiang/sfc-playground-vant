@@ -31,7 +31,7 @@ jobs:
 
       - name: Renovate
         # https://github.com/renovatebot/github-action
-        uses: renovatebot/github-action@v32.159.5
+        uses: renovatebot/github-action@v32.171.0
         env:
           LOG_LEVEL: debug
         with:
