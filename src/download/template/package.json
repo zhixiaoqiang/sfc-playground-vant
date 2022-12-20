@@ -10,13 +10,13 @@
     "@vant/popperjs": "1.3.0",
     "@vant/touch-emulator": "1.4.0",
     "@vant/use": "1.4.3",
-    "vant": "3.6.5",
-    "vue": "3.2.41"
+    "vant": "4.0.3",
+    "vue": "3.2.45"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "4.0.0",
-    "@vue/compiler-sfc": "3.2.41",
-    "vite": "2.9.15",
+    "@vue/compiler-sfc": "3.2.45",
+    "vite": "4.0.2",
     "vite-plugin-style-import": "2.0.0"
   }
 }
