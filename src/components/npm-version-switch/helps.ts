@@ -6,11 +6,10 @@ type handleVersionsFnType = (
 ) => string[]
 
 async function fetchVersions (ownerRepo: string, handleVersions?: handleVersionsFnType): Promise<string[]> {
-  const res = await fetch(`https://api.github.com/repos/${ownerRepo}/releases?per_page=100`)
-  const releases: Record<string, string>[] = await res.json()
-  const versions = releases.map(releaseItem =>
-    /^v/.test(releaseItem.tag_name) ? releaseItem.tag_name.slice(1) : releaseItem.tag_name
-  )
+  const res = await fetch(`https://api.cdnjs.com/libraries/${ownerRepo}?fields=versions`)
+  const releases: { versions: string[] } = await res.json()
+
+  const versions = releases.versions.reverse()
   // if the latest version is a pre-release, list all current pre-releases
   // otherwise filter out pre-releases
   const isInPreRelease = versions[0].includes('-')
@@ -32,7 +31,7 @@ export const npmVersionSwitchList = [
   {
     npm: npmTypeEnum.vant,
     historyDeployments: 'https://vercel.com/zhixiaoqiang/sfc-playground-vant/deployments',
-    fetchVersions: () => fetchVersions('youzan/vant', (versions) => {
+    fetchVersions: () => fetchVersions(npmTypeEnum.vant, (versions) => {
       return versions.sort((prevVersion, nextVersion) => {
         const [preMajorVersion] = prevVersion.split('.')
         const [nextMajorVersion] = nextVersion.split('.')
@@ -44,7 +43,7 @@ export const npmVersionSwitchList = [
     npm: npmTypeEnum.vue,
     currentCommit: __VUE_COMMIT__,
     historyDeployments: 'https://app.netlify.com/sites/vue-sfc-playground/deploys',
-    fetchVersions: () => fetchVersions('vuejs/core', (versions, isInPreRelease) => {
+    fetchVersions: () => fetchVersions(npmTypeEnum.vue, (versions, isInPreRelease) => {
       const filteredVersions: string[] = []
       for (const v of versions) {
         if (v.includes('-')) {
