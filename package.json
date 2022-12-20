@@ -71,7 +71,7 @@
     "prettier": "2.7.1",
     "sort-package-json": "2.1.0",
     "typescript": "4.8.4",
-    "vite": "3.2.3",
+    "vite": "4.0.2",
     "vite-plugin-style-import": "2.0.0",
     "vue-eslint-parser": "9.1.0",
     "wireit": "0.7.2",
