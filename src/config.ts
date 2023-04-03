@@ -9,8 +9,20 @@ export enum npmCdnEnum {
 
 export const DEFAULT_CDN = npmCdnEnum.unpkg
 
+/**
+ * get cdn url by package name & filePath
+ * if use unpkg cdn, url will add query params: ?module'
+ */
+export const getCdnUrl = (npmName: string, filePath?: string) => {
+  if (DEFAULT_CDN === npmCdnEnum.unpkg) {
+    return `${DEFAULT_CDN}/${npmName}?module`
+  }
+
+  return `${DEFAULT_CDN}/${npmName}/${filePath}`
+}
+
 /** get vue runtime cdn url buy version */
-export const getVueRuntimeURL = (version: string) => `${DEFAULT_CDN}/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js`
+export const getVueRuntimeURL = (version?: string) => getCdnUrl('vue' + (version ? `@${version}` : ''))
 
 /** get vue compiler cdn url buy version */
 export const getVueCompilerURL = (version: string) => `${DEFAULT_CDN}/@vue/compiler-sfc@${version}/dist/compiler-sfc.esm-browser.js`
@@ -33,23 +45,15 @@ export const getVantURL = (version?: string) => {
 export const defaultMainFile = 'App.vue'
 export const vantInjectPlugin = 'vant-inject-plugin.js'
 
-/**
- * get cdn url by package name & filePath
- * if use unpkg cdn, url will add query params: ?module'
- */
-export const getCdnUrl = (npmName: string, filePath?: string) => {
-  if (DEFAULT_CDN === npmCdnEnum.unpkg) {
-    return `${DEFAULT_CDN}/${npmName}?module`
-  }
-
-  return `${DEFAULT_CDN}/${npmName}/${filePath}`
-}
-
 export const vantImports: Record<string, string> = {
   vant: getVantURL(),
   '@vant/use': getCdnUrl('@vant/use', '/dist/index.esm.mjs'),
   '@vant/popperjs': getCdnUrl('@vant/popperjs', '/dist/index.esm.mjs'),
   '@vant/touch-emulator': `${DEFAULT_CDN}/@vant/touch-emulator`
+}
+
+export const vueImports: Record<string, string> = {
+  vue: getVueRuntimeURL()
 }
 
 export const additionalImports = {

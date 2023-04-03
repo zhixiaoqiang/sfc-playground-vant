@@ -1,4 +1,4 @@
-import { vantImports } from './config'
+import { vantImports, vueImports } from './config'
 
 /**
  * fix wrong cdn url already in use
@@ -11,11 +11,18 @@ export const convertBugImportMapCdnUrl = (importMap: Record<string, string>) => 
   }, {
     name: '@vant/popperjs',
     filepath: '/dist/esm/index.js'
+  }, {
+    name: 'vue',
+    filepath: '/dist/runtime-dom.esm-browser.js'
   }]
 
   someBugImportData.forEach(({ name, filepath }) => {
-    if (importMap[name]?.endsWith(filepath) && vantImports[name]) {
-      importMap[name] = vantImports[name]
+    if (importMap[name]?.endsWith(filepath)) {
+      if (vantImports[name]) {
+        importMap[name] = vantImports[name]
+      } else if (vueImports[name]) {
+        importMap[name] = vueImports[name]
+      }
     }
   })
 }
