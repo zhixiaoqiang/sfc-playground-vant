@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@vue/repl':
-    specifier: ^1.4.1
-    version: 1.4.1(vue@3.3.4)
+    specifier: ^2.5.8
+    version: 2.5.8
   fflate:
     specifier: ^0.8.0
     version: 0.8.0
@@ -1102,12 +1102,8 @@ packages:
     dependencies:
       '@vue/shared': 3.3.4
 
-  /@vue/repl@1.4.1(vue@3.3.4):
-    resolution: {integrity: sha512-7ONz/o1OtS611jW6SdAOZXn4HdN8gfyatcOzcEu+3bDMvgbyr7ZUcbRV6Y4xdkxDARKDBzs+sb3/oz1Na5hAeQ==}
-    peerDependencies:
-      vue: ^3.2.13
-    dependencies:
-      vue: 3.3.4
+  /@vue/repl@2.5.8:
+    resolution: {integrity: sha512-IvOlNhka4VKDQZS9FIceFFWyPibzqAUHyjHOoe8cMZmeP7H3H7mfMqvzQ0l1wjMAqqeEcgpFhSzMWsTEL4XZeA==}
     dev: false
 
   /@vue/runtime-core@3.3.4:
