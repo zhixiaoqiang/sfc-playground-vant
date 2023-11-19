@@ -47,8 +47,8 @@ export const vantInjectPlugin = 'vant-inject-plugin.js'
 
 export const vantImports: Record<string, string> = {
   vant: getVantURL(),
-  '@vant/use': getCdnUrl('@vant/use', '/dist/index.esm.mjs'),
-  '@vant/popperjs': getCdnUrl('@vant/popperjs', '/dist/index.esm.mjs'),
+  '@vant/use': getCdnUrl('@vant/use', 'dist/index.esm.mjs'),
+  '@vant/popperjs': getCdnUrl('@vant/popperjs', 'dist/index.esm.mjs'),
   '@vant/touch-emulator': `${DEFAULT_CDN}/@vant/touch-emulator`
 }
 
@@ -56,8 +56,9 @@ export const vueImports: Record<string, string> = {
   vue: getVueRuntimeURL()
 }
 
-export const additionalImports = {
-  ...vantImports
+export const additionalImports: Record<string, string> = {
+  ...vantImports,
+  '@vue/shared': getCdnUrl('@vue/shared', 'dist/shared.esm-bundler.js')
 }
 
 export const welcomeCode = `\
