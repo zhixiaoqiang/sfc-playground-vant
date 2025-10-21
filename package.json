@@ -75,7 +75,7 @@
     "vite-plugin-style-import": "2.0.0",
     "vue-eslint-parser": "9.3.0",
     "wireit": "0.9.5",
-    "zx": "7.2.2"
+    "zx": "8.8.5"
   },
   "renovate": {
     "enabled": false
